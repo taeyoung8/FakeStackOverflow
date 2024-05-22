@@ -1,0 +1,826 @@
+/* Add your CSS here */
+
+/* Add CSS stylesheet */
+
+body {
+    font-family: Arial, 'Times New Roman';
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    overflow-x: hidden;
+  }
+
+
+/* defining global var in root pseudo, change if we want header to be bigger or smaller */
+  :root {
+    --header-height: 9vh; /* Initialize the variable */
+}
+
+.header {
+  background-color: #c5c5c5;
+  /* padding: 24px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #575757;
+  line-height: 0px;
+
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 1001;
+  /* --header-height: 3vh; */
+  height: var(--header-height);
+  /* Need box sizing for border bc of menu list */
+  box-sizing: border-box;
+
+}
+
+.menu_list {
+    border-right: 3px dotted #a1a1a1;
+    width: 20%;
+    height: calc(100vh - var(--header-height));
+    background-color: #ececec;
+    padding: 20px 0;
+    max-height: calc(100vh - var(--header-height));
+    position: sticky;
+    top: var(--header-height);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+  .all{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .search {
+    right: 120px;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    border: 2px solid black;
+  }
+  /* container of Questions tab*/
+  .container {
+    display: contents;
+    width: 100%;
+
+    /* min-height: 100vh */
+  }
+
+  /* menu */
+
+
+  .menu {
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu li {
+    /* padding: 10px 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu button {
+    /* height: 30px; */
+    font-size: 24px;
+    color: #387dbe;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background-color: #ececec;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    /* background: none; */
+    border: none;
+
+    cursor: pointer;
+    text-align: center;
+
+    text-decoration: none;
+
+    /* background: none; */
+  }
+
+  .highlight_background {
+    background-color: gray !important;
+    /* height: 20px; */
+
+    width: 100%;
+    border-radius: 8px;
+  }
+
+
+
+
+  /* Question */
+  .questions_main {
+    width: 80%;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    /* padding: 30px; */
+    font-style: bold;
+  }
+
+  .questions_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-left: 20px;
+  }
+  .questions_subheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+  }
+
+  .all_questions {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .ask_button {
+    border: solid black 1px;
+    padding: 5px 20px;
+    background-color: #4597e4;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 50px;
+  }
+
+  #answersPage .ask_button {
+    border: solid black 1px;
+    padding: 5px 20px;
+    background-color: #4597e4;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 6%;
+  }
+
+  .three_buttons {
+    display: flex;
+  }
+
+  .newest_button {
+    /* padding: 5px 10px; */
+    border: solid black 1px;
+    background-color: #aaaaaa;
+    color: white;
+    cursor: pointer;
+    /* border-radius: 5px; */
+  }
+
+  .active_button {
+    /* padding: 5px 10px; */
+    border: solid black 1px;
+    background-color: #aaaaaa;
+    color: white;
+    cursor: pointer;
+    /* border-radius: 5px; */
+  }
+
+  .unanswered_button {
+    /* padding: 5px 10px; */
+    border: solid black 1px;
+    background-color: #aaaaaa;
+    color: white;
+    cursor: pointer;
+    /* border-radius: 5px; */
+  }
+
+  .question_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    overflow-wrap: break-word;
+
+    /* border-bottom: dotted;
+    border-color: gray; */
+  }
+
+  .answers_and_views {
+    width: 10%;
+    margin-left: 10px;
+    /* text-align: center; */
+  }
+
+  .voting{
+    width: 100%;
+
+    background-color: #4597e4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+
+
+.voteNumber{
+  /* font-weight: bold; */
+  /* font-size: 30px; */
+  /* padding: 10px 0; */
+  text-align: center;
+}
+
+
+.solidLine{
+  border: 1px solid lightgray;
+}
+
+#questionComment{
+  height: 50px;
+  width: 80%;
+  resize: none;
+}
+
+#addCommentButton{
+  background-color: #4597e4;
+  border-radius: 5px;
+  margin-left: 3%;
+  border: none;
+}
+
+#addCommentButton:hover{
+  cursor: pointer;
+}
+
+  .upvoteDownvote{
+    margin-left: 10px;
+  }
+
+  .question_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: contents;
+
+    /* width: 40%; */
+}
+
+  .question_content {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .tags {
+    display: flex;
+    gap: 5px;
+    padding-top: 5px;
+    /* justify-content: center; */
+  }
+
+  .tags span {
+    /* background-color: #E0E0E0; */
+    background-color: #575757;
+    color: white;
+    font-size: small;
+    font-weight: lighter;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid black;
+  }
+
+  .question_by {
+    width: 30%;
+    /* text-align: ; */
+    font-size: 14px;
+    color: grey;
+  }
+
+  hr {
+    border: 0;
+    border-top: 3px dotted #a1a1a1;
+    margin: 10px 0;
+  }
+
+  #answersPage {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 10px;
+  }
+
+  /* container for answersPage */
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    height: 100px;
+    /* margin-left: 20px; */
+  }
+  .subContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    /* margin-left: 20px; */
+    padding-bottom: 20px;
+    border-bottom: dotted;
+    border-color: gray;
+  }
+
+  #numAnswers {
+    display: inline-flex;
+    width: 10%;
+    font-size:14px;
+    justify-content: center;
+  }
+
+  .ask-button2 {
+    border: solid black 1px;
+    padding: 5px 20px;
+    background-color: #4597e4;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: 50px;
+  }
+
+  #questionTitle {
+    font-size: 22px;
+    /* text-align: center; */
+    width: 60%
+  }
+
+  #numViews {
+    display: inline-flex;
+    width: 10%;
+    font-size:14px;
+    justify-content: center;
+  }
+
+  #questionText {
+    width: 60%;
+    text-align: left;
+  }
+
+  #who {
+    width: 20%;
+    text-align: left;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: 50px;
+  }
+
+  .answerDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* border-bottom: dotted; */
+    /* border-color: gray; */
+    /* margin-bottom: 10px; */
+    padding-top: 15px;
+    padding-bottom: 10px;
+    /* width: 250%; */
+
+  }
+
+  #allAnswersContainer{
+    width: 100%;
+  }
+
+  .answerText {
+    margin-left: 20px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    width: 80%
+  }
+
+  .answerBy {
+    width: 10%;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: 50px;
+  }
+
+  .answerDate {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+  .answerQuestion {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .answer_button {
+    border: solid black 1px;
+    padding: 5px 20px;
+    background-color: #4597e4;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+
+  /*SPLIT */
+
+
+  .fill-form{
+    margin-left: 5%;
+    width: 75%;
+  }
+
+  .small-text{
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .text-box{
+    width: 60%;
+  }
+
+
+  .post-button {
+    border: solid black 1px;
+    background-color: #4597e4;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 40px;
+  }
+  .delete-button{
+    border: solid black 1px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 1%;
+    height: 40px;
+  }
+
+  .mandatory {
+    position: absolute;
+    right: 30%;
+    margin-top: 20px;
+    color: red;
+  }
+  #questionTextBox{
+    height: 140px;
+    resize: none;
+  }
+
+  #questionSummaryBox{
+    height: 100px;
+    resize: none;
+  }
+
+  #answerTextBox{
+    height: 140px;
+    resize: none;
+  }
+
+  .errorBorder{
+    border-color: red;
+  }
+
+  .errorMessage{
+    color: red;
+  }
+
+  .tagsPage{
+    width: 80%;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  .tagContainer { /* if we want to make styling better without margin left and right we can add spacing divs but idc */
+    display: grid;
+    grid-template-columns: repeat(3, 0.25fr);
+    row-gap: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: space-between;
+
+  }
+
+  .box {
+    display: grid;
+    place-items: center;
+    /* height: 100px; */
+    width: 90%; /*This way the box size decreases in smaller window  */
+    min-height: 80px;
+    max-height: fit-content;
+    border: 2px dashed gray;
+    text-align: center;
+    /* line-height: 40px; */
+    justify-items: center;
+    margin-left: 20px;
+    margin-right: 2%;
+
+  }
+
+
+
+
+
+
+
+  .topBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .nTags{
+    margin-left: 2%;
+  }
+
+  .AllTags{
+    margin-left: 2%;
+  }
+
+  /* replaced with ask_button */
+  /* .third{
+    background: rgb(125, 151, 228);
+    color: white;
+    height: 40px;
+    width: 100px;
+    margin-right: 2%;
+  } */
+
+  a:visited{
+    color: #387dbe;
+  }
+
+  .tags{
+    display: flex;
+  }
+
+  #noQuestionsFoundMessage {
+    /* display: none; */
+    padding: 50px;
+    font-size: 25px;
+  }
+  #noAnswersFoundMessage {
+    /* display: none; */
+    padding: 5px 20px;
+    font-size: 16px;
+  }
+  .commentText{
+    padding-left: 30px;
+    border: none;
+    margin: 10px 0;
+  }
+
+  .username{
+    color: red;
+  }
+  .usernameAnswer{
+    color: green;
+  }
+  .timeSpanGray{
+    color: gray;
+  }
+
+
+  .tagButton{
+    font-size: 16px;
+    overflow-wrap: break-word;
+    display: block;
+    color: #387dbe;
+    /* display: block; */
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+
+  }
+
+  #userProfile{
+    width: 80%;
+    display: inline;
+  }
+
+  #profileButtons{
+    text-align: center;
+  }
+
+
+/* CSS for Welcome/Register/Login Page START ####################################################################################*/
+
+.pnButton {
+  background-color:  #4597e4; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.pnButton:disabled {
+  background-color: #ccc;
+  color: #666;
+}
+
+.title {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: 2em;
+  padding: 20px 0;
+}
+
+#welcomeContent {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcomeButton {
+  width: 60%;
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4597e4;
+  cursor: pointer;
+}
+
+.registerPage {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registerPage label {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.registerPage input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.registerPage .errorMessage {
+  display: none;
+  color: red;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+.registerPage button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px;
+  background-color: #4597e4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.registerPage button:hover {
+  background-color: #4597e4;
+}
+
+.loginPage {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loginPage label {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.loginPage input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.loginPage input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+.loginPage button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #4597e4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.loginPage button:hover {
+  background-color: #4597e4;
+}
+
+.userItem{
+  justify-content: center;
+}
+
+
+/* CSS for Welcome/Register/Login Page END ####################################################################################*/
+
+
+.profileButtons{
+  border: solid black 1px;
+  padding: 5px 20px;
+  background-color: #4597e4;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 35px;
+}
+
+
+.profileTagButtons{
+  border: solid black 1px;
+  padding: 5px 20px;
+  background-color: #4597e4;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 25px;
+}
+
+.prevNextButtonsContainer{
+  bottom: 0;
+  position: fixed;
+  justify-self: center;
+}
+
+.login_button{
+  border-color: black;
+  background-color: lightgray ;
+  margin-left: 20px;
+  width: 7%;
+  height: 50%;
+}
+
+.login_button:hover{
+  cursor: pointer;
+  background-color: white;
+}
